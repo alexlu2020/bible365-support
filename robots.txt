@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alexlu2020.github.io/bible365-support/sitemap.xml
