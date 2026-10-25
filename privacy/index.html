@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>隱私權政策｜Bible365</title>
-  <meta name="description" content="Bible365（屬靈健保書）App 隱私權政策與開發者聯絡方式。">
+  <meta name="description" content="Bible365（屬靈健保書）的本機收藏、JSON 備份、剪貼簿、Email 支援及 GitHub Pages 網站資料處理說明。">
   <link rel="canonical" href="https://alexlu2020.github.io/bible365-support/privacy/">
   <link rel="icon" href="../icon.png">
   <link rel="apple-touch-icon" href="../icon.png">
@@ -18,7 +18,7 @@
         <img src="../icon.png" width="68" height="68" alt="Bible365 App 圖示">
         <div><p class="app-label">Bible365 · 屬靈健保書</p><h1>隱私權政策</h1></div>
       </div>
-      <div><p class="effective-date">生效日期：2026 年 7 月 25 日</p><nav class="top-links" aria-label="網站導覽"><a href="../">支援中心</a><a href="#contact">聯絡方式</a></nav></div>
+      <div><p class="effective-date">更新與生效日期：2026 年 10 月 25 日</p><nav class="top-links" aria-label="網站導覽"><a href="../">支援中心</a><a href="#contact">聯絡方式</a></nav></div>
     </div>
   </header>
   <main id="main-content" class="page-shell">
@@ -27,10 +27,14 @@
       <nav>
         <a href="#collection">資料蒐集</a>
         <a href="#local-storage">本機儲存</a>
+        <a href="#backups">JSON 備份與分享</a>
         <a href="#clipboard">剪貼簿</a>
+        <a href="#support-email">Email 支援</a>
         <a href="#third-parties">第三方服務</a>
+        <a href="#website">網站瀏覽</a>
         <a href="#children">兒童隱私</a>
         <a href="#security">資料安全與保存</a>
+        <a href="#rights">資料查詢與刪除</a>
         <a href="#changes">政策變更</a>
         <a href="#contact">聯絡方式</a>
       </nav>
@@ -38,53 +42,85 @@
     <article>
       <section class="summary" aria-labelledby="summary-title">
         <p class="eyebrow">隱私摘要</p>
-        <h2 id="summary-title">您的閱讀資料留在您的裝置上</h2>
-        <p>「屬靈健保書」（以下稱「本 APP」）尊重並保護您的隱私。本 APP 不要求註冊帳號、不蒐集或傳送個人資料，也不使用廣告、追蹤或分析服務。</p>
+        <h2 id="summary-title">離線閱讀保存在裝置，分享與來信由您決定</h2>
+        <p>本政策適用於 Bible365（屬靈健保書，以下稱「本 App」）及本支援網站。本 App 不要求註冊帳號，內建閱讀、搜尋與收藏可離線使用，不會將您的收藏或閱讀偏好自動上傳至開發者伺服器。</p>
+        <p>使用者主動匯出或分享備份、寄送支援郵件，以及瀏覽本網站時，會有不同的資料處理方式，分別說明如下。本政策取代 2026 年 7 月 25 日版本。</p>
       </section>
       <section id="collection">
-        <h2>一、我們蒐集的資料</h2>
-        <p>本 APP 不會主動蒐集、儲存或傳送下列資料：</p>
-        <ul>
-          <li>姓名、電子郵件、電話號碼或其他身分識別資料</li>
-          <li>精確或概略位置資訊</li>
-          <li>裝置識別碼、廣告識別碼或使用行為分析資料</li>
-          <li>相片、影片、音訊、聯絡人或其他裝置檔案</li>
-          <li>付款、財務或健康相關資料</li>
-        </ul>
+        <h2>一、App 的資料處理範圍</h2>
+        <p>本 App 不包含廣告或使用行為分析功能，不為提供讀經服務而要求您的姓名、電子郵件、電話、位置、聯絡人或付款資料，也不建立開發者端的使用者帳號。</p>
+        <p>閱讀偏好與收藏由 App 儲存在裝置內；這不等於開發者在伺服器蒐集您的閱讀紀錄。若您主動寄信或分享檔案，則依本政策的對應段落及您選擇的服務處理。</p>
       </section>
       <section id="local-storage">
         <h2>二、儲存在裝置上的資料</h2>
-        <p>為提供一致的閱讀體驗，本 APP 會在您的裝置本機保存您選擇的深色模式及字體大小設定。這些偏好設定不會上傳至開發者或第三方伺服器。</p>
-        <p>您可以透過清除 APP 資料或解除安裝本 APP，移除所有由本 APP 儲存在裝置上的偏好設定。</p>
+        <p>為提供閱讀及收藏功能，本 App 在裝置內保存：</p>
+        <ul>
+          <li>閱讀偏好：明亮／深色佈景、字體大小及語言選擇，儲存於本機偏好設定。</li>
+          <li>收藏資料：經文章節出處、經文正文、收藏來源（每日讀經或聖經閱讀）、相關讀經日期（如有）及收藏建立時間，儲存於本機 SQLite 資料庫。</li>
+        </ul>
+        <p>選擇跟隨手機語言時，App 會在裝置內讀取系統語系以決定顯示語言，不以此識別您的身分。上述本機資料不會由本 App 自動同步到開發者伺服器。</p>
+      </section>
+      <section id="backups">
+        <h2>三、JSON 備份、匯入與使用者主動分享</h2>
+        <p>當您選擇匯出收藏，App 會先在本機快取建立 JSON 檔，內容包含備份格式版本、匯出時間，以及第二節所列的收藏欄位。此檔案不是加密備份，請自行保管並確認分享對象。</p>
+        <p>App 透過作業系統分享介面，讓您自行決定是否另存、寄送或交給其他 App、雲端儲存服務。接收方可能取得您選擇分享的備份內容，並依其政策處理；這不是 App 自動雲端同步，也不會自動將備份寄給開發者。</p>
+        <p>匯入時，App 只讀取您透過系統檔案選擇器指定的檔案，將其複製到本機快取並合併收藏，重複項目會略過。若檔案位於雲端，下載與存取可能需要網路並由該檔案服務處理。</p>
+        <p>本機快取可能由作業系統清理，不能作為唯一備份。已另存或分享至 App 以外的檔案，不會因刪除 App 內收藏而自動刪除。</p>
       </section>
       <section id="clipboard">
-        <h2>三、剪貼簿功能</h2>
-        <p>當您主動按下「複製經文」功能時，本 APP 會將您選取的經文寫入裝置剪貼簿，方便您貼到其他應用程式。本 APP 不會在背景讀取剪貼簿，也不會將剪貼簿內容傳送給開發者或第三方。</p>
+        <h2>四、剪貼簿功能</h2>
+        <p>當您主動使用「複製」，App 會將經文及章節出處寫入系統剪貼簿，供您貼到其他應用程式。本 App 不在背景讀取剪貼簿，也不將剪貼簿內容自動傳送給開發者。</p>
+        <p>您將內容貼入其他服務後，該服務的處理方式，以及系統是否啟用跨裝置剪貼簿，由您選擇的服務、作業系統及設定決定。</p>
+      </section>
+      <section id="support-email">
+        <h2>五、Email 支援資料</h2>
+        <p>當您主動來信至 alexsystem995@gmail.com，開發者會收到寄件信箱、您提供的姓名（如有）、信件內容及附件。若您提供 App 版本、裝置型號、作業系統版本、截圖或收藏備份，這些內容也會隨郵件一併收到。</p>
+        <p>這些資料用於回覆問題、排查錯誤、追蹤支援案件及處理您提出的隱私相關請求，不用於廣告行銷。請只提供處理問題所需的資訊，並先遮蔽截圖中的私密資料；不需要提供密碼或驗證碼。</p>
+        <p>支援郵件保存在支援信箱，保存以回覆、必要的問題追蹤及相關紀錄所需期間為原則；不再有上述需要時，刪除或去識別化可識別內容。您可隨時來信要求查詢、更正或刪除，我們會依實際可處理範圍及必要保留情形回覆，並說明處理進度。</p>
+        <p>支援信箱使用 Gmail，郵件傳輸、儲存及服務備份亦受 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 隱私權政策</a>約束。僅使用 App 的離線功能，不會因此自動建立或寄送支援郵件。</p>
       </section>
       <section id="third-parties">
-        <h2>四、第三方服務與資料分享</h2>
-        <p>本 APP 不整合廣告平台、使用者分析工具、社群登入或雲端帳號服務，也不出售、出租或分享您的個人資料。</p>
-        <p>您透過 Google Play 下載或更新本 APP 時，Google 可能依其自身政策處理必要的商店與裝置資訊；該處理不由本 APP 控制。</p>
+        <h2>六、第三方服務與應用程式商店</h2>
+        <p>App 的離線閱讀與本機收藏不依賴廣告、分析、社群登入或開發者雲端帳號服務。開發者不出售或出租您提供的支援資料；您自行選擇的檔案分享或郵件服務，則會依相關操作取得必要內容。</p>
+        <p>透過 Apple App Store 或 Google Play 下載、更新本 App 時，商店平台可能依自身政策處理帳戶、裝置及下載相關資訊。該處理與本 App 的本機收藏儲存不同，請分別參閱 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple 隱私權政策</a>及 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 隱私權政策</a>。</p>
+      </section>
+      <section id="website">
+        <h2>七、本支援網站的瀏覽紀錄</h2>
+        <p>本網站由 GitHub Pages 提供靜態網頁託管，網站本身未加入廣告、使用者分析追蹤腳本，或額外設定 Cookie 的程式，也不要求登入。</p>
+        <p>依 GitHub 官方說明，瀏覽 GitHub Pages 網站時，GitHub 會為安全目的記錄及保存訪客 IP 位址，無論訪客是否登入 GitHub。這屬於網站主機的資料處理，不代表 App 會自動上傳您的收藏或閱讀偏好。</p>
+        <p>相關主機紀錄之保存、安全與資料權利，請參閱 <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection" target="_blank" rel="noopener noreferrer">GitHub Pages 資料蒐集說明</a>及 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub 隱私權聲明</a>。外部連結會前往該服務的網站，適用其資料處理政策。</p>
       </section>
       <section id="children">
-        <h2>五、兒童隱私</h2>
-        <p>本 APP 不以蒐集兒童個人資料為目的，也不會要求任何年齡層使用者提供個人資料。若未來功能有所變更，我們將先更新本政策並採取適當的隱私保護措施。</p>
+        <h2>八、兒童隱私</h2>
+        <p>App 的離線讀經功能不要求任何年齡層使用者提供個人資料。我們不以蒐集兒童個人資料為目的。若家長或監護人認為兒童透過支援郵件提供了不必要的個人資料，可來信要求協助處理。</p>
       </section>
       <section id="security">
-        <h2>六、資料安全與保存</h2>
-        <p>由於本 APP 不建立帳號，也不將個人資料傳送至開發者伺服器，因此開發者不持有可供保存、存取、更正或刪除的使用者個人資料。裝置本機偏好設定的安全性亦取決於您的裝置安全措施。</p>
+        <h2>九、資料安全、保存與備份副本</h2>
+        <p>本機偏好及收藏會保留至您變更設定、刪除收藏或清除相關 App 資料為止。裝置資料的安全取決於您的裝置鎖定、作業系統與備份設定；本政策不代表 App 的資料庫或 JSON 檔已另行加密，也不保證能復原遺失資料。</p>
+        <p>系統備份、裝置移轉或雲端檔案是否包含 App 資料，依您的作業系統、服務及設定決定。解除安裝或刪除 App 內資料，不代表系統備份、已匯出 JSON、郵件附件或其他接收方的副本會同步刪除，應向各對應服務管理或提出請求。</p>
+        <p>開發者無法遠端讀取、刪除或還原您裝置內的收藏；只有您主動寄送的支援郵件與附件，才會成為開發者可處理的支援資料。</p>
+      </section>
+      <section id="rights">
+        <h2>十、資料查詢、更正與刪除</h2>
+        <ul>
+          <li>本機收藏：可在「收藏」頁刪除不需要的項目；設定可在 App 內變更。清除 App 資料的方式依作業系統而異，請先確認備份需求。</li>
+          <li>匯出與分享的檔案：請自行在檔案儲存位置刪除，或聯絡您選擇的接收方；刪除 App 內收藏不會撤回已分享的檔案。</li>
+          <li>支援郵件：可寄信至下方信箱，要求查詢、更正或刪除您提供的資料。我們可能請您提供合理且必要的資訊，以確認請求與相關資料的關聯，不需要提供 App 或郵件帳號的密碼。</li>
+        </ul>
+        <p>您可停止匯出、分享或寄送支援郵件，而不影響離線閱讀；停止後不會自動撤回先前已交給接收方的資料。若有適用規範或必要紀錄保留的限制，我們會在回覆中說明可處理範圍；GitHub、郵件及商店平台自行持有的紀錄，亦須依其流程處理。</p>
       </section>
       <section id="changes">
-        <h2>七、隱私權政策變更</h2>
-        <p>當 APP 功能、法規要求或資料處理方式發生變更時，我們可能更新本政策。更新後會在此頁標示新的生效日期；重大變更將於合理範圍內另行通知。</p>
+        <h2>十一、隱私權政策變更</h2>
+        <p>當 App、網站功能或資料處理方式變更時，會在此頁更新政策及日期。若需另行取得同意，會依適用要求處理；不以政策更新代替必要的使用者選擇。</p>
+        <p>本次更新補充收藏與語言偏好、JSON 匯出／匯入與分享、支援郵件、GitHub Pages 託管紀錄、商店平台，以及資料保存與刪除方式。</p>
       </section>
       <section id="contact">
-        <h2>八、聯絡方式</h2>
-        <p>若您對本隱私權政策或本 APP 的資料處理方式有任何疑問，可透過以下方式聯絡開發者：</p>
+        <h2>十二、聯絡方式</h2>
+        <p>若對 Bible365（屬靈健保書）的隱私政策、支援資料或刪除請求有任何疑問，請透過以下信箱聯絡開發者：</p>
         <p><a class="contact-link" href="mailto:alexsystem995@gmail.com">alexsystem995@gmail.com <span aria-hidden="true">↗</span></a></p>
       </section>
     </article>
   </main>
-  <footer><p>Bible365 · 屬靈健保書</p><p>原政策內容移轉至 GitHub Pages；聯絡方式更新於 2026 年 10 月 25 日。</p></footer>
+  <footer><p>Bible365 · 屬靈健保書</p><p>隱私權政策更新於 2026 年 10 月 25 日。</p></footer>
 </body>
 </html>
